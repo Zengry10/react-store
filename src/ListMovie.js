@@ -53,7 +53,7 @@ let movies = [
 ]
 
 export const getMovies = () => new Promise((resolve) => {
-  
+  setTimeout(() => {
     resolve(movies)
-
+  }, 1000)
 })

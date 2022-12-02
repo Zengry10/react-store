@@ -20,6 +20,7 @@ export function StoreProvider(props) {
           
         }}>
             {props.children}
+            {console.log(movies)}
            
         </StoreContext.Provider>
     )

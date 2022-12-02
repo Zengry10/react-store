@@ -14,6 +14,7 @@ function App() {
       <BrowserRouter>
       <Test/>
         <li> <Link to="/movie">Les films</Link></li>
+        <li> <Link to="/test">test</Link></li>
         
         <Routes>
         <Route path='/movie' element={<ShowFilm/>}></Route>

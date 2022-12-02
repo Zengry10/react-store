@@ -4,19 +4,32 @@ import { useState } from "react";
 
 
 export default function ShowFilm(){
-    const { movies } = useContext(StoreContext)
-    const [not, setNot] = useState({movies})
-    function removeFilm(){
+    const { movies, setMovies } = useContext(StoreContext)
+    const [deleteMovies, setDeleteMovies] = useState([
+        { movies }
         
-    }
+      ]);
+    
+
+
+
+        const removeElement = (id) => {
+            const newMovie = movies.filter((movie) => movie.id !== id)
+                setMovies(newMovie)
+          };
+
+
+        
     
     return(
         
-        movies.map((movie) => {
+        movies.map((movie, id) => {
             return(
-                <div>
+                <div key={id}>
                     <p>{movie.title}</p>
-                    <button onClick={removeFilm()}>Delete</button>
+                    <button 
+                    onClick={() => removeElement(movie.id)}
+                    >Delete</button>
                 </div>
                 
             )
